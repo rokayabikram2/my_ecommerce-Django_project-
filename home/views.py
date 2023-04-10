@@ -105,7 +105,7 @@ def product_review(request, slug):
         )
         data.save()
 
-        messages.error(request,'The review is submited')
+        messages.error(request, 'The review is submited')
 
         return redirect(f'/product_detail/{slug}')
 
@@ -259,4 +259,8 @@ def delete_wish(request, slug):
         if Wishlist.objects.filter(slug=slug, username=username).exists():
             Wishlist.objects.filter(slug=slug, username=username).delete()
     return redirect('/wish')
+
+
+# def CheckOut(request):
+#     if request.method =="POST"
 
